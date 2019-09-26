@@ -19,7 +19,7 @@ twitterbot.on('tweet_create_events', function(payload){
     
     twitterbot.twit.post('statuses/update', {
     status: reply_tweet.getText(),
-    in_reply_to_status_id: reply_tweet.id_str,
+    in_reply_to_status_id: request_tweet.getStatusID(),
     auto_populate_reply_metadata: true
   }, function(err, data, response) {
     if (err){
